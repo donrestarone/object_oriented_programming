@@ -24,10 +24,14 @@ end
 
 bob = BankAccount.new('bob',10, 0.005)
 
-puts bob.inspect
-
-bob.withdraw(10)
-
-puts bob.inspect
+puts "Bobs account balance #{bob.inspect}"
 
 
+
+bob.deposit(10)
+puts "Bobs account balance after deposit #{bob.inspect}"
+
+
+bob.withdraw(5)
+
+puts "Bobs account balance after withdrawals #{bob.inspect}"
