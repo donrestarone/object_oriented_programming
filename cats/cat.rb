@@ -5,7 +5,7 @@ class Cat
 		@meal_time = meal_time
 	end
 
-	def eats_at
+	def eats_at  #feeding time 
 		if @meal_time < 12 
 			puts "#{@meal_time} AM"
 		else 
@@ -14,7 +14,7 @@ class Cat
 			
 		end 
 	end 
-	def meow
+	def meow  #gives information about cats. 
 		if @meal_time < 12
 			return "my name is #{@name} and i like eating #{@preferred_food} at #{eats_at} AM"
 		elsif @meal_time > 12 
