@@ -1,22 +1,33 @@
 class BankAccount 
-	def initialize( balance, interest_rate, name) #bank account should have balance and interest_rate attributes
+	def initialize( name, balance, interest_rate) #bank account should have balance and interest_rate attributes
 		@balance = balance
 		@interest_rate = interest_rate
-		@name = name
+		@name = name.capitalize
 
 	end 
+	
 	def deposit(amount)
 		@balance += amount
 		return @balance
 	end 
 
+	def withdraw(amount)
+		@balance -= amount
+		return @balance
+	end 
+
+
+
+
 
 end 
 
-bob = BankAccount.new(10, 0.005, 'bob')
+bob = BankAccount.new('bob',10, 0.005)
 
 puts bob.inspect
 
-bob.deposit(10)
+bob.withdraw(10)
 
 puts bob.inspect
+
+
