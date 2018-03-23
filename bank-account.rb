@@ -15,9 +15,10 @@ class BankAccount
 		@balance -= amount
 		return @balance
 	end 
-
-
-
+	def gain_interest(interest_rate)
+		@balance *= interest_rate 
+		return @balance
+	end 
 
 
 end 
@@ -32,6 +33,10 @@ bob.deposit(10)
 puts "Bobs account balance after deposit #{bob.inspect}"
 
 
-bob.withdraw(5)
+bob.withdraw(0)
 
 puts "Bobs account balance after withdrawals #{bob.inspect}"
+
+
+bob.gain_interest(1.005)
+puts "interest added to balance #{bob.inspect}"
