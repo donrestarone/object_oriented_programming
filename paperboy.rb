@@ -17,15 +17,15 @@ class Paperboy
 
 	def deliver(start_address, end_address)
 		@experience += 1 + (start_address - end_address).abs #+1 to count the first house
-		@number_of_del = 1+ (start_address - end_address).abs #+1 to count the first house
-		@earnings += @number_of_del * 0.25
-			if @number_of_del > @minimum
+
+		if @number_of_del > @minimum
 				@earnings += (number_of_del - @minimum) * 0.50 
 				return @earnings
-
-
-
-			end
+		elsif @number_of_del < @minimum		
+		@number_of_del = 1+ (start_address - end_address).abs #+1 to count the first house
+				@earnings += @number_of_del * 0.25
+		end
+  			 
 	end 
 
 	def report 
@@ -46,22 +46,22 @@ bob = Paperboy.new('bob', 50, 0)
 
 puts bob.inspect
 
-bob.deliver(1, 10)
+bob.deliver(1, 55)
  bob.quota
 
 
-bob.deliver(1, 10)
+
 puts bob.inspect
  
  bob.quota
 
-bob.deliver(1, 10)
+
 puts bob.inspect
 
  
  bob.quota
 
-bob.deliver(1, 10)
+
 puts bob.inspect
 
 puts bob.report
